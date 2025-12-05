@@ -24,11 +24,13 @@
                     const iosAppStoreLink = 'https://apps.apple.com/app/instagram/id389801252';
                     const fallbackLink = isAndroid() ? androidAppStoreLink : iosAppStoreLink;
 
+                    console.log('tentativa de abrir ' + customScheme)
                     // Tenta abrir o app com o deep link
                     window.location = customScheme;
 
                     // Verifica se o aplicativo foi aberto
                     setTimeout(function () {
+                        console.log('fallback')
                         if (document.hasFocus()) {
                             window.location = fallbackLink; // Redireciona para a loja se o app não abrir
                         }
