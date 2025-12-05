@@ -31,7 +31,8 @@
 
                     // Verifica se o aplicativo foi aberto
                     setTimeout(function () {
-                        alert('fallback')
+                        alert('fallback para ?' + fallbackLink)
+                        alert('focus ' + document.hasFocus())
                         if (document.hasFocus()) {
                             window.location = fallbackLink; // Redireciona para a loja se o app não abrir
                         }
