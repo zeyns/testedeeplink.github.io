@@ -26,7 +26,7 @@
                     window.location = customScheme;
 
                     setTimeout(function () {
-                        if (document.hasFocus()) {
+                        if (document.visibilityState === 'visible') {
                             window.location = fallbackLink; 
                         }
                     }, 1000);
