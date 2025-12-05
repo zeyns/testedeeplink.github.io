@@ -19,9 +19,9 @@
             if (/Mobi/.test(navigator.userAgent)) {
                 // Se for mobile (iOS ou Android)
                 if (isiOS() || isAndroid()) {
-                    const customScheme = 'custom_scheme://'; // Substitua pelo seu deep link
-                    const androidAppStoreLink = 'https://play.google.com/store/apps/details?id=com.test.android';
-                    const iosAppStoreLink = 'itms-apps://itunes.apple.com/app/my-app/idxxxxxxxx?mt=8';
+                    const customScheme = 'instagram://user?username=cristiano'; // Substitua pelo seu deep link
+                    const androidAppStoreLink = 'https://play.google.com/store/apps/details?id=com.instagram.android';
+                    const iosAppStoreLink = 'https://apps.apple.com/app/instagram/id389801252';
                     const fallbackLink = isAndroid() ? androidAppStoreLink : iosAppStoreLink;
 
                     // Tenta abrir o app com o deep link
