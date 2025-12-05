@@ -19,8 +19,8 @@
             if (/Mobi/.test(navigator.userAgent)) {
                 if (isiOS() || isAndroid()) {
                     const customScheme = 'instagram://user?username=cristiano'; // Substitua pelo seu deep link
-                    const androidAppStoreLink = 'https://play.google.com/store/apps/details?id=com.instagram.android';
-                    const iosAppStoreLink = 'https://apps.apple.com/app/instagram/id389801252';
+                    const androidAppStoreLink = 'intent://store/apps/details?id=com.instagram.android#Intent;scheme=market;package=com.android.vending;end';
+                    const iosAppStoreLink = 'itms-apps://itunes.apple.com/app/instagram/id389801252';
                     const fallbackLink = isAndroid() ? androidAppStoreLink : iosAppStoreLink;
 
                     window.location = customScheme;
