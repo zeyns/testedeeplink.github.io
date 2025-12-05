@@ -17,6 +17,7 @@
         // Redirecionar com base no user agent
         window.onload = function() {
             if (/Mobi/.test(navigator.userAgent)) {
+                alert('user agnet' + navigator.userAgent)
                 // Se for mobile (iOS ou Android)
                 if (isiOS() || isAndroid()) {
                     const customScheme = 'https://instagram://user?username=cristiano'; // Substitua pelo seu deep link
