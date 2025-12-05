@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento com Base no User Agent</title>
+    <script>
+        // Funções para detectar iOS e Android
+        function isiOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+
+        function isAndroid() {
+            return /Android/.test(navigator.userAgent);
+        }
+
+        // Redirecionar com base no user agent
+        window.onload = function() {
+            if (/Mobi/.test(navigator.userAgent)) {
+                // Se for mobile (iOS ou Android)
+                if (isiOS() || isAndroid()) {
+                    const customScheme = 'custom_scheme://'; // Substitua pelo seu deep link
+                    const androidAppStoreLink = 'https://play.google.com/store/apps/details?id=com.test.android';
+                    const iosAppStoreLink = 'itms-apps://itunes.apple.com/app/my-app/idxxxxxxxx?mt=8';
+                    const fallbackLink = isAndroid() ? androidAppStoreLink : iosAppStoreLink;
+
+                    // Tenta abrir o app com o deep link
+                    window.location = customScheme;
+
+                    // Verifica se o aplicativo foi aberto
+                    setTimeout(function () {
+                        if (document.hasFocus()) {
+                            window.location = fallbackLink; // Redireciona para a loja se o app não abrir
+                        }
+                    }, 1000);
+                }
+            } else {
+                // Se for um navegador da web
+                window.location.href = 'https://www.portoseguro.com.br'; // Redireciona para a página
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Aguarde, redirecionando...</h1>
+</body>
+</html>
