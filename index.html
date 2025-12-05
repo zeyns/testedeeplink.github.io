@@ -18,9 +18,9 @@
         window.onload = function() {
             if (/Mobi/.test(navigator.userAgent)) {
                 if (isiOS() || isAndroid()) {
-                    const customScheme = 'instagram://user?username=cristiano'; // Substitua pelo seu deep link
-                    const androidAppStoreLink = 'intent://store/apps/details?id=com.instagram.android#Intent;scheme=market;package=com.android.vending;end';
-                    const iosAppStoreLink = 'itms-apps://itunes.apple.com/app/instagram/id389801252';
+                    const customScheme = 'portosuperapp://porto/loan/reff';
+                    const androidAppStoreLink = 'https://play.google.com/store/apps/details?id=br.com.portoseguro.experienciacliente.mundoporto';
+                    const iosAppStoreLink = 'https://apps.apple.com/us/app/porto-conta-digital-e-seguros/id1511026277';
                     const fallbackLink = isAndroid() ? androidAppStoreLink : iosAppStoreLink;
 
                     window.location = customScheme;
@@ -33,7 +33,7 @@
                 }
             } else {
                 // Se for um navegador da web
-                window.location.href = 'https://www.portoseguro.com.br'; // Redireciona para a página
+                window.location.href = 'https://www.portoseguro.com.br/loja/auto-credito'; // Redireciona para a página
             }
         };
     </script>
