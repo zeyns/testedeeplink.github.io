@@ -20,7 +20,7 @@
                 alert('user agnet' + navigator.userAgent)
                 // Se for mobile (iOS ou Android)
                 if (isiOS() || isAndroid()) {
-                    const customScheme = 'fb://profile/cristiano'; // Substitua pelo seu deep link
+                    const customScheme = 'instagram://user?username=cristiano'; // Substitua pelo seu deep link
                     const androidAppStoreLink = 'https://play.google.com/store/apps/details?id=com.instagram.android';
                     const iosAppStoreLink = 'https://apps.apple.com/app/instagram/id389801252';
                     const fallbackLink = isAndroid() ? androidAppStoreLink : iosAppStoreLink;
