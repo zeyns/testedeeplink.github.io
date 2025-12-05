@@ -25,22 +25,11 @@
 
                     window.location = customScheme;
 
-                      let popupOpened = false;
-
-                    window.onblur = function() {
-                        alert('onblur')
-                        popupOpened = true; // Assume que o popup foi aberto se a janela perder foco
-                    };
-
-
                     setTimeout(function () {
-                         if (!popupOpened) {
-                            window.location = fallbackLink; 
-                        }
+                        window.location = fallbackLink; 
                     }, 10000);
                 }
             } else {
-                // Se for um navegador da web
                 window.location.href = 'https://www.portoseguro.com.br/loja/auto-credito'; // Redireciona para a página
             }
         };
