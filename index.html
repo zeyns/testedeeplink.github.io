@@ -25,8 +25,16 @@
 
                     window.location = customScheme;
 
+                      let popupOpened = false;
+
+                    window.onblur = function() {
+                        alert('onblur')
+                        popupOpened = true; // Assume que o popup foi aberto se a janela perder foco
+                    };
+
+
                     setTimeout(function () {
-                        if (document.visibilityState === 'visible') {
+                         if (!popupOpened) {
                             window.location = fallbackLink; 
                         }
                     }, 1000);
