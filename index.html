@@ -17,24 +17,17 @@
         // Redirecionar com base no user agent
         window.onload = function() {
             if (/Mobi/.test(navigator.userAgent)) {
-                alert('user agnet' + navigator.userAgent)
-                // Se for mobile (iOS ou Android)
                 if (isiOS() || isAndroid()) {
                     const customScheme = 'instagram://user?username=cristiano'; // Substitua pelo seu deep link
                     const androidAppStoreLink = 'https://play.google.com/store/apps/details?id=com.instagram.android';
                     const iosAppStoreLink = 'https://apps.apple.com/app/instagram/id389801252';
                     const fallbackLink = isAndroid() ? androidAppStoreLink : iosAppStoreLink;
 
-                    alert('tentativa de abrir ' + customScheme)
-                    // Tenta abrir o app com o deep link
                     window.location = customScheme;
 
-                    // Verifica se o aplicativo foi aberto
                     setTimeout(function () {
-                        alert('fallback para ?' + fallbackLink)
-                        alert('focus ' + document.hasFocus())
                         if (document.hasFocus()) {
-                            window.location = fallbackLink; // Redireciona para a loja se o app não abrir
+                            window.location = fallbackLink; 
                         }
                     }, 1000);
                 }
